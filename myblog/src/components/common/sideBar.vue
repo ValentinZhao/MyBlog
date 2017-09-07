@@ -9,9 +9,9 @@
     <div class="sidebar-posts">
       <h3 class="sidebar-posts-title">最新发表</h3>
       <ul class="sidebar-posts-list">
-        <li class="sidebar-posts-item"
-          v-for="article in newPosts">
-          {{article.name}}
+        <li class="sidebar-posts-item" v-for="(article, index) in articleList"
+          v-if="index < 3">
+          {{article.title}}
         </li>
       </ul>
     </div>
@@ -19,18 +19,22 @@
 </template>
 
 <script>
+import {mapGetters, mapActions} from 'vuex'
+
 export default {
   data () {
     return {
-      newPosts: [
-        {name: '清风疲惫而后安睡', _id: 101},
-        {name: '清风疲惫而后安睡', _id: 102},
-        {name: '清风疲惫而后安睡', _id: 103},
-        {name: '清风疲惫而后安睡', _id: 104}
-      ]
     }
   },
-  created () {
+  computed: {
+    ...mapGetters([
+      'articleList'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'getAllArticles'
+    ])
   }
 }
 </script>
