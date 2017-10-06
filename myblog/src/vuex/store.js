@@ -7,18 +7,23 @@ Vue.use(Vuex)
 
 const state = {
   articleList: [],
-  showLoading: false
+  showLoading: false,
+  articleLoaded: false
 }
 
 const mutations = {
   [types.GET_ALL_ARTICLES] (state, articleList) {
     state.articleList = articleList
+  },
+  [types.ARTICLE_LOADED] (state, articleLoaded) {
+    state.articleLoaded = articleLoaded
   }
 }
 
 const getters = {
   articleList: state => state.articleList,
-  showLoading: state => state.showLoading
+  showLoading: state => state.showLoading,
+  articleLoaded: state => state.articleLoaded
 }
 
 const actions = {

@@ -1,5 +1,6 @@
 <template>
-  <div class="sidebar-container rd-col-5">
+  <div class="sidebar-container rd-col-5"
+    :class="{'hidden': articleLoaded === true}">
     <div class="sidebar-tips-head">
       <h3 class="sidebar-tips-title">提示</h3>
       <p class="sidebar-tips-content">
@@ -28,7 +29,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'articleList'
+      'articleList',
+      'articleLoaded'
     ])
   },
   methods: {
@@ -40,6 +42,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.hidden {
+  display: none
+}
+
 .sidebar-container {
   box-sizing: border-box;
   padding-left: 30px;

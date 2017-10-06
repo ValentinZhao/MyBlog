@@ -2,9 +2,6 @@ const Article = require('../model/article');
 
 const article = new Article();
 
-let articleList = [{"title" : "我是新标题111", "createTime" : "2017-8-29", "sourceArticle" : "source article 1","markedArticle" : "前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端", "tags" : "前端经验" },
-{"title" : "我是标题2", "createTime" : "2017-8-30", "sourceArticle" : "source article 2", "markedArticle" : "前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端", "tags" : "前端经验" }];
-
 
 
 

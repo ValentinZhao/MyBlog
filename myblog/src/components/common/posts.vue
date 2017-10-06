@@ -7,8 +7,9 @@
         transition="fadeIn">
         <ul class="posts-article-list">
           <li class="posts-article-item" v-for="(article,index) in articleList" :key="index">
-            <h4 class="article-head-title"
-              v-link="{name: 'page', params: {id: article._id}}">{{article.title}}</h4>
+            <router-link :to="{name: 'articles', params: {id: article._id}}">
+              <h4 class="article-head-title">{{article.title}}</h4>
+            </router-link>
             <span class="article-head-time">{{article.createTime}}</span>
             <p class="article-content-desc">
               {{article.markedArticle | substrArticle}}
@@ -21,8 +22,9 @@
                     v-link="{name: 'tagsContent', params: {id: article.tags}}">{{article.tags}}</li>
                 </ul>
               </div>
-              <span class="article-readmore"
-                v-link="{name: 'page', params: {id: article._id}}">查看更多>></span>
+              <router-link :to="{name: 'articles', params: {id: article._id}}">
+                <span class="article-readmore">查看更多>></span>
+              </router-link>
             </div>
           </li>
         </ul>
@@ -105,6 +107,9 @@ export default {
     padding: 15px 30px 10px;
     border-bottom: 1px solid #eee;
     height: 170px;
+    a {
+      color: black;
+    }
     &:after {
       content: '';
       position: absolute;
